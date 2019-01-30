@@ -35,12 +35,18 @@ def LoadDatabase():
 			DW_loadDB.append(  Label( root,  text="loading  %s with %d table(s)"%(DB_name.get(),len(tables))  )  )
 			DW_loadDB[-1].grid(row=1,column=0)
 
+
+			table_list = Listbox(root)
+			DW_loadDB.append(table_list)
+			table_list.grid(row=1,column=1)
+			
+
 			DW_loadDB.append( Button(root, text="See Desc"))
 			DW_loadDB[-1].grid(row=1,column=2)
 
-			for x in tables:
-				DW_dbdata.append( Label(root, text="%s"%(x[0])) )
-				DW_dbdata[-1].grid(row=2,column=0)
+
+			for i,x in enumerate(tables):
+				table_list.insert(i,x)
 
 
 
@@ -90,6 +96,7 @@ Load_DB_Button = Button(root, text ="Load DB",command=LoadDatabase)
 Load_DB_Button.grid(row=0,column=2)
 Close_DB_Button = Button(root, text ="Close DB",command=CloseDatabase)
 Close_DB_Button.grid(row=0,column=3)
+
 
 root.mainloop() 
 
