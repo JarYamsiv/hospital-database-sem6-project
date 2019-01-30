@@ -34,7 +34,7 @@ ID int NOT NULL,
 Doctor_ID int NOT NULL,
 Specialization varchar(25) NOT NULL , 
 PRIMARY KEY(ID)
-FOREIGN KEY Doctor_ID REFERENCES Doctor(ID) );
+FOREIGN KEY (Doctor_ID) REFERENCES Doctor(ID) );
 
 CREATE TABLE Labs(
 ID int NOT NULL, 
