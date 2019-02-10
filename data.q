@@ -62,7 +62,16 @@ values
 
 insert into Security(ID,Name,Shift,Salary,Address)
 values
-(1,"Raman","Morning",12000,"92 Illinois Ave");
+(1,"Raman","Morning",12000,"92 Illinois Ave")
+(2,"Arjunan","Morning",12000,"Park Avenue"),
+(3,"Govardhan","Night",12000,"West Avenue"),
+(4,"Hamsa","Night",12000,"South Avenue"),
+(5,"Kishkindan","Morning",12000,"Park Avenue"),
+(6,"Luttapi","Night",12000,"Balarama"),
+(7,"R A Jappan","Morning",12000,"Matanjeri"),
+(8,"Kambodharan","Night",12000,"East fort"),
+(9,"Dinkan","Morning",12000,"Savier Caves"),
+(10,"Shaji Pappan","Night",12000,"Munnar");
 
 insert into Pat_attends_doc(Doctor_ID,Patient_ID)
 values
