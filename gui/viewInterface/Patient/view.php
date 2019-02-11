@@ -3,10 +3,11 @@
  	$servername = "localhost";
  	$username = "root";
  	$password = "mynewpassword";
+ 	$dbname = "hospital";
 
  	echo "connecting...<br>";
 	// Create connection
-	 $conn = mysqli_connect($servername, $username, $password);
+	 $conn = mysqli_connect($servername, $username, $password , $dbname);
 
 	// Check connection
 	 if (!$conn) {
@@ -24,7 +25,7 @@
     	// output data of each row
     	while($row = mysqli_fetch_assoc($result)) {
         	echo "id: " . $row["ID"]. " - Name: " . $row["Name"]. " " . $row["Age"]. "<br>";
-    	}
+    		}
 		} 		else {
     	echo "0 results";
 	}
