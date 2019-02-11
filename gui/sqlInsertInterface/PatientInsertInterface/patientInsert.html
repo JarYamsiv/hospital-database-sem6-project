@@ -4,12 +4,30 @@
 	<title></title>
 </head>
 <body>
-	 <form action="/sqlInsertInterface/PatientInsertInterface/insert.php">
-  First name:<br>
-  <input type="text" name="firstname"><br>
-  Last name:<br>
-  <input type="text" name="lastname"><br><br>
-  <input type="submit" value="Submit">
+	 <form action="/sqlInsertInterface/PatientInsertInterface/insert.php" method="post">
+
+  ID:<br>
+  <input type="text" name="ID"><br>
+
+  Name:<br>
+  <input type="text" name="Name"><br>
+
+  Age:<br>
+  <input type="text" name="Age"><br>
+
+  Last Visit:<br>
+  <input type="text" name="LastVisit"><br>
+
+  Address:<br>
+  <input type="text" name="Address"><br>
+
+
+  Medical History:<br>
+  <input type="text" name="MedicalHistory"><br>
+
+  <br><input type="submit" name="Submit" value="Submit">
+
+
 </form> <br>
 
 <a href="/index.html">home</a>
