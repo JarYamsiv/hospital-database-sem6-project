@@ -126,6 +126,31 @@ label[for="item-6"]:hover {
 }
 
 
+label[for="item-7"] {
+  display: block;
+  margin: 20px 0 0;
+  border-bottom: 1px solid green;
+
+  max-width: 500px;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  margin: 1px auto;
+  padding: 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+
+  background: #1abc9c;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  border-radius: 15px 15px 15px 0px;
+}
+label[for="item-7"]:hover {
+  border-radius: 0px 0px 0px 0px;
+}
+
+
 
 input[type="checkbox"] {
   position: absolute;
@@ -274,6 +299,40 @@ input[type="checkbox"]:checked + .hide6 {
   opacity: 0;
   display: block;
 }
+
+
+
+
+
+.ex7 .hide7 {
+  max-width: 500px;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  margin: 10px auto;
+  padding: 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+
+  width: 50%;
+  display: table;
+  height: 150px; /* any arbitrary height but best at the minimum initial height you would want. */
+  overflow: hidden;
+  transition: all 0.5s ease;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+.inner7 {
+  padding: 10px;
+}
+input[type="checkbox"]:checked + .hide7 {
+  height: 0;
+  opacity: 0;
+  display: block;
+}
+
+
+
 
 
 
