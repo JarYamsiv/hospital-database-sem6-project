@@ -40,7 +40,7 @@ label[for="item-3"] {
   border-radius: 15px 15px 15px 0px;
 }
 label[for="item-3"]:hover {
-  text-decoration: underline;
+  border-radius: 0px 0px 0px 0px;
 }
 
 label[for="item-4"] {
@@ -64,7 +64,7 @@ label[for="item-4"] {
   border-radius: 15px 15px 15px 0px;
 }
 label[for="item-4"]:hover {
-  text-decoration: underline;
+  border-radius: 0px 0px 0px 0px;
 }
 
 label[for="item-5"] {
@@ -88,7 +88,7 @@ label[for="item-5"] {
   border-radius: 15px 15px 15px 0px;
 }
 label[for="item-5"]:hover {
-  text-decoration: underline;
+  border-radius: 0px 0px 0px 0px;
 }
 
 label[for="item-6"] {
@@ -112,7 +112,7 @@ label[for="item-6"] {
   border-radius: 15px 15px 15px 0px;
 }
 label[for="item-6"]:hover {
-  text-decoration: underline;
+  border-radius: 0px 0px 0px 0px;
 }
 
 

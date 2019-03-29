@@ -39,12 +39,12 @@
 
         <thead>
         	<tr>
-            	<td>ID</td>
-            	<td>Name</td>
-            	<td>Age</td>
-            	<td>LastVisit</td>
-            	<td>Address</td>
-            	<td>MedicalHistory</td>
+            	<th>ID</th>
+            	<th>Name</th>
+            	<th>Age</th>
+            	<th>LastVisit</th>
+            	<th>Address</th>
+            	<th>MedicalHistory</th>
         	</tr>
         </thead>
 

@@ -20,17 +20,19 @@
   <input type="checkbox" name="one" id="item-3" checked>
   <div class="hide3">
     <div class="inner3">
-      <form action="./sqlInsertInterface/patInsertNew/patientInsert.html">
+
+      <form action="./doctor/landing.php" method="post">
         <fieldset>
           <legend><span class="number">1</span> Login Credentials</legend>
 
-          <input type="text" name="field1" placeholder="Your Name *">
-          <input type="password" name="field2" placeholder="Your password *">
+          <input type="text" name="doc_name" placeholder="Your Name *">
+          <input type="password" name="doc_pass" placeholder="Your password *">
 
         </fieldset>
 
-        <input type="submit" value="Apply" />
+        <input type="submit" name="doc_login" value="login" />
       </form>
+
     </div>  
   </div>
 
@@ -43,20 +45,19 @@
   <input type="checkbox" name="one" id="item-4" checked>
   <div class="hide4">
     <div class="inner4">
-      <form action="viewInterface/Patient/view.php">
+
+       <form action="./patient/landing.php" method="post">
         <fieldset>
-          <legend><span class="number">1</span> Candidate Info</legend>
-          <input type="text" name="field1" placeholder="Your Name *">
-          <input type="email" name="field2" placeholder="Your Email *">
-          <textarea name="field3" placeholder="About yourself"></textarea>
+          <legend><span class="number">1</span> Login Credentials</legend>
+
+          <input type="text" name="pat_name" placeholder="Your Name *">
+          <input type="password" name="pat_pass" placeholder="Your password *">
 
         </fieldset>
-        <fieldset>
-          <legend><span class="number">2</span> Additional Info</legend>
-          <textarea name="field3" placeholder="About Your School"></textarea>
-        </fieldset>
-        <input type="submit" value="Apply" />
+
+        <input type="submit" name="pat_login" value="login" />
       </form>
+
     </div>  
   </div>
 
@@ -69,20 +70,19 @@
   <input type="checkbox" name="one" id="item-5" checked>
   <div class="hide5">
     <div class="inner5">
-      <form>
+
+       <form action="./admin/landing.php" method="post">
         <fieldset>
-          <legend><span class="number">1</span> Candidate Info</legend>
-          <input type="text" name="field1" placeholder="Your Name *">
-          <input type="email" name="field2" placeholder="Your Email *">
-          <textarea name="field3" placeholder="About yourself"></textarea>
+          <legend><span class="number">1</span> Login Credentials</legend>
+
+          <input type="text" name="admin_name" placeholder="Your Name *">
+          <input type="password" name="admin_pass" placeholder="Your password *">
 
         </fieldset>
-        <fieldset>
-          <legend><span class="number">2</span> Additional Info</legend>
-          <textarea name="field3" placeholder="About Your School"></textarea>
-        </fieldset>
-        <input type="submit" value="Apply" />
+
+        <input type="submit" name="admin_login" value="login" />
       </form>
+
     </div>  
   </div>
 
@@ -93,20 +93,19 @@
   <input type="checkbox" name="one" id="item-6" checked>
   <div class="hide6">
     <div class="inner6">
-      <form>
+
+       <form action="./nurse/landing.php" method="post">
         <fieldset>
-          <legend><span class="number">1</span> Candidate Info</legend>
-          <input type="text" name="field1" placeholder="Your Name *">
-          <input type="email" name="field2" placeholder="Your Email *">
-          <textarea name="field3" placeholder="About yourself"></textarea>
+          <legend><span class="number">1</span> Login Credentials</legend>
+
+          <input type="text" name="nurse_name" placeholder="Your Name *">
+          <input type="password" name="nurse_pass" placeholder="Your password *">
 
         </fieldset>
-        <fieldset>
-          <legend><span class="number">2</span> Additional Info</legend>
-          <textarea name="field3" placeholder="About Your School"></textarea>
-        </fieldset>
-        <input type="submit" value="Apply" />
+
+        <input type="submit" name="nurse_login" value="login" />
       </form>
+
     </div>  
   </div>
 

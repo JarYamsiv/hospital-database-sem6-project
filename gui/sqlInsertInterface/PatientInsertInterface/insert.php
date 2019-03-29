@@ -3,10 +3,11 @@
  	$servername = "localhost";
  	$username = "root";
  	$password = "mynewpassword";
+ 	$dbname = "hospital";
 
  	echo "connecting...";
 	// Create connection
-	 $conn = mysqli_connect($servername, $username, $password);
+	 $conn = mysqli_connect($servername, $username, $password,$dbname);
 
 	// Check connection
 	 if (!$conn) {
@@ -37,6 +38,32 @@
 	 	echo "Medical History :".$pat_medhistory."<br>";
 	 }
 	 
+	 $query = "INSERT INTO Patient VALUES (".
+
+	 	$pat_id.",".
+
+	 	"\"".$pat_name."\"".",".
+
+	 	$pat_age.",".
+
+	 	"\"".$pat_lastvisit."\"".",".
+
+	 	"\"".$pat_address."\"".",".
+
+	 	"\"".$pat_medhistory."\"".
+
+	 ");" ;
+
+	 echo $query;
+
+	 if(mysqli_query($conn,$query))
+	 {
+	 	echo "Database created successfully";
+	 }
+	 else
+	 {
+	 	echo "Error creating database: " . $conn->error;
+	 }
 
 	 mysqli_close($conn);
 ?> 
