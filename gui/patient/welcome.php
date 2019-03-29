@@ -4,12 +4,19 @@
 	<link rel="stylesheet" href="../stylesheets/tables_no_highlight/css/style.css">
 </head>
 
-<h1>
-	Hi welcome friend
-</h1>
+<br>
+<br>
+<center>
+	<h1>
+		Welcome
+	</h1>
+</center>
+
+<br>
+<br>
 
 <center>
-	<table>
+	<table class="maintable">
 
 		<thead>
 			<tr>
@@ -30,52 +37,41 @@
 								<label for="job">Select Doctor:</label>
 
 								<?php  
-									$servername = "localhost";
-									$username = "root";
-									$password = "mynewpassword";
-									$dbname = "hospital";
+								$servername = "localhost";
+								$username = "root";
+								$password = "mynewpassword";
+								$dbname = "hospital";
 
 
-									$conn = mysqli_connect($servername, $username, $password , $dbname);
+								$conn = mysqli_connect($servername, $username, $password , $dbname);
 
-									if (!$conn) {
-										die("Connection failed: " . mysqli_connect_error());
-									}
+								if (!$conn) {
+									die("Connection failed: " . mysqli_connect_error());
+								}
 
-									$query = "SELECT Name,Specialization from Doctor GROUP BY Specialization";
+								$sql = "SELECT Name,Specialization from Doctor";
 
-									$result = mysqli_query($conn, $sql);
+								$result = mysqli_query($conn, $sql);
 
-									if($result>0)
-									{
-										echo"successfull";
-									}
-									else
-									{
-										echo "failed".$conn->error;
-									}
+
+
+
 								?>
 
 
 								<select id="job" name="field4">
+
 									
-									<optgroup label="Indoors">
-										<option value="fishkeeping">Fishkeeping</option>
-										<option value="reading">Reading</option>
-										<option value="boxing">Boxing</option>
-										<option value="debate">Debate</option>
-										<option value="gaming">Gaming</option>
-										<option value="snooker">Snooker</option>
-										<option value="other_indoor">Other</option>
+									
+									<optgroup>
+										<?php
+										while ( $row = mysqli_fetch_assoc($result)) {
+											echo " <option>".$row["Name"]." </option>";
+										}  
+										?>
+										
 									</optgroup>
-									<optgroup label="Outdoors">
-										<option value="football">Football</option>
-										<option value="swimming">Swimming</option>
-										<option value="fishing">Fishing</option>
-										<option value="climbing">Climbing</option>
-										<option value="cycling">Cycling</option>
-										<option value="other_outdoor">Other</option>
-									</optgroup>
+									
 								</select>      
 							</fieldset>
 							
@@ -113,10 +109,42 @@
 		<tbody>
 			<tr>
 				<td>
-					yeet
+					<?php 
+					$sql = "SELECT Name,Specialization from Doctor";
+
+					$result = mysqli_query($conn, $sql);
+					?>
+
+					<center>
+						<table>
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Specialization </th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php
+								while ( $row = mysqli_fetch_assoc($result)) 
+								{
+									echo "<tr> <td>".$row["Name"]."</td> <td>".$row["Specialization"]."</td> </tr>";
+								}   
+								?>
+							</tbody>
+						</table>
+					</center>
 				</td>
 			</tr>
 		</tbody>
 
 	</table>
 </center>
+
+<br>
+<br>
+<br>
+<br>
+
+<?php
+mysql_close($conn);
+?>
