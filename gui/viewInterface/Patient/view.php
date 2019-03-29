@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Pure CSS Table Highlight (vertical & horizontal)</title>
+      <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
  <?php
 
  	$servername = "localhost";
@@ -25,17 +35,20 @@
 	{
     	// output data of each row]
     	echo "
-    	<table border=\"1\" cellpadding=\"10\">
+    	<table>
 
-    	<tr>
-    	<td>ID</td>
-    	<td>Name</td>
-    	<td>Age</td>
-    	<td>LastVisit</td>
-    	<td>Address</td>
-    	<td>MedicalHistory</td>
-    	</tr>
+        <thead>
+        	<tr>
+            	<td>ID</td>
+            	<td>Name</td>
+            	<td>Age</td>
+            	<td>LastVisit</td>
+            	<td>Address</td>
+            	<td>MedicalHistory</td>
+        	</tr>
+        </thead>
 
+        <tbody>
     	";
     	while($row = mysqli_fetch_assoc($result)) {
     		echo "<tr>";
@@ -49,7 +62,7 @@
         	echo "</tr>";
     		}
 
-    	echo "</table>";
+    	echo "</tbody></table>";
 	} 		
 	else 
 	{
@@ -58,3 +71,6 @@
 
 	 mysqli_close($conn);
 ?> 
+</div>
+</body>
+</html>
