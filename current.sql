@@ -151,6 +151,24 @@ INSERT INTO `Drug_in_pharmacy` VALUES (1,1),(2,1),(3,1),(8,1),(4,2),(5,2),(6,2),
 UNLOCK TABLES;
 
 --
+-- Temporary table structure for view `Drug_list`
+--
+
+DROP TABLE IF EXISTS `Drug_list`;
+/*!50001 DROP VIEW IF EXISTS `Drug_list`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `Drug_list` (
+  `ID` tinyint NOT NULL,
+  `Name` tinyint NOT NULL,
+  `Cost` tinyint NOT NULL,
+  `Imported_date` tinyint NOT NULL,
+  `Expiry_date` tinyint NOT NULL,
+  `Quantity_available` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Table structure for table `Lab_at_room`
 --
 
@@ -392,9 +410,29 @@ CREATE TABLE `Patient` (
 
 LOCK TABLES `Patient` WRITE;
 /*!40000 ALTER TABLE `Patient` DISABLE KEYS */;
-INSERT INTO `Patient` VALUES (1,'Ringer',24,NULL,'223 E. Concord','First time visitor here'),(2,'Arjun',21,'2018-12-05','12529 State Road 535','Vistied for headache'),(3,'Gokul Shaji',22,'2019-01-01','Alappuzha','Previously visited for severe back pain, bedridden multiple times'),(4,'Bhagya',26,NULL,'2855 South Orange Ave','First time visitor here'),(5,'Vivek',21,NULL,'7822 W. Sand Lake Rd','First time visitor here');
+INSERT INTO `Patient` VALUES (1,'Ringer',24,NULL,'223 E. Concord','First time visitor here'),(2,'Arjun',21,'2018-12-05','12529 State Road 535','Vistied for headache'),(3,'Gokul Shaji',22,'2019-01-01','Alappuzha','Previously visited for severe back pain, bedridden multiple times'),(4,'Bhagya',26,NULL,'2855 South Orange Ave','First time visitor here'),(5,'Vivek',21,NULL,'7822 W. Sand Lake Rd','First time visitor here'),(456,'',45,'0000-00-00','Nearby','First time here');
 /*!40000 ALTER TABLE `Patient` ENABLE KEYS */;
 UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER pat_remove_trigger AFTER DELETE ON Patient
+FOR EACH ROW
+BEGIN
+UPDATE Ward SET Occupancy=Occupancy-1 where ID = (select Ward_ID from Pat_admit_ward where Patient_ID=OLD.ID);
+DELETE FROM Pat_admit_ward where Patient_ID=OLD.ID;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `Patient_bill_drug`
@@ -423,6 +461,22 @@ LOCK TABLES `Patient_bill_drug` WRITE;
 INSERT INTO `Patient_bill_drug` VALUES (1,1,98001),(1,2,98001),(2,9,99001),(3,4,198001),(4,6,98001),(5,3,198003),(5,7,198003);
 /*!40000 ALTER TABLE `Patient_bill_drug` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `Patient_list`
+--
+
+DROP TABLE IF EXISTS `Patient_list`;
+/*!50001 DROP VIEW IF EXISTS `Patient_list`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `Patient_list` (
+  `ID` tinyint NOT NULL,
+  `Name` tinyint NOT NULL,
+  `Age` tinyint NOT NULL,
+  `Medical_history` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `Pharmacist`
@@ -685,6 +739,103 @@ LOCK TABLES `Ward_at_room` WRITE;
 INSERT INTO `Ward_at_room` VALUES (1,14),(2,15),(3,16),(4,17),(5,18);
 /*!40000 ALTER TABLE `Ward_at_room` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `Ward_info`
+--
+
+DROP TABLE IF EXISTS `Ward_info`;
+/*!50001 DROP VIEW IF EXISTS `Ward_info`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `Ward_info` (
+  `ID` tinyint NOT NULL,
+  `Occupancy` tinyint NOT NULL,
+  `Capacity` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `name` varchar(20) DEFAULT NULL,
+  `username` varchar(10) DEFAULT NULL,
+  `password` varchar(10) DEFAULT NULL,
+  `profession` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES ('Admin','admin','admin_pass',NULL),('patrick','patrick','doctor_pas','doctor'),('vismay','vismay','doctor_pas','doctor'),('roshin','roshin','nurse_pass','nurse'),('harsha','harsha','patient_pa','patient');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Final view structure for view `Drug_list`
+--
+
+/*!50001 DROP TABLE IF EXISTS `Drug_list`*/;
+/*!50001 DROP VIEW IF EXISTS `Drug_list`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `Drug_list` AS select `Drug`.`ID` AS `ID`,`Drug`.`Name` AS `Name`,`Drug`.`Cost` AS `Cost`,`Drug`.`Imported_date` AS `Imported_date`,`Drug`.`Expiry_date` AS `Expiry_date`,`Drug`.`Quantity_available` AS `Quantity_available` from `Drug` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `Patient_list`
+--
+
+/*!50001 DROP TABLE IF EXISTS `Patient_list`*/;
+/*!50001 DROP VIEW IF EXISTS `Patient_list`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `Patient_list` AS select `Patient`.`ID` AS `ID`,`Patient`.`Name` AS `Name`,`Patient`.`Age` AS `Age`,`Patient`.`Medical_history` AS `Medical_history` from `Patient` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `Ward_info`
+--
+
+/*!50001 DROP TABLE IF EXISTS `Ward_info`*/;
+/*!50001 DROP VIEW IF EXISTS `Ward_info`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `Ward_info` AS select `Ward`.`ID` AS `ID`,`Ward`.`Occupancy` AS `Occupancy`,`Ward`.`Capacity` AS `Capacity` from `Ward` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -695,4 +846,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-11 22:31:43
+-- Dump completed on 2019-03-29 15:21:13
