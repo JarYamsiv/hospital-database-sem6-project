@@ -28,7 +28,47 @@
 		<tbody>
 			<tr>
 				<td>
-					yeet
+					<div id="form_from_table">
+						<form>
+							<fieldset>
+								<legend><span class="number">1</span> Building Info</legend>
+								<input type="text" name="detail_building_name" placeholder="Building Name *">
+								
+							</fieldset>
+							
+							<input type="submit" value="View" />
+						</form>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+
+		<thead>
+			<tr>
+				<th>
+					Assign Nurse to a ward
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<div id="form_from_table">
+						<form>
+							<fieldset>
+								<legend><span class="number">1</span> Nurse Info</legend>
+								<input type="number" name="ward_id" placeholder="Ward ID *">
+								<input type="number" name="nurse_id" placeholder="Ward ID *">
+								<input type="text" name="nurse_name" placeholder="Nurse Name *">
+								<input type="text" name="nurse_specialization" placeholder="Specialization *">
+								<input type="number" name="nurse_salary" placeholder="Salary *">
+								<input type="text" name="nurse_address" placeholder="Address *">
+								
+							</fieldset>
+							
+							<input type="submit" value="Assign" />
+						</form>
+					</div>
 				</td>
 			</tr>
 		</tbody>
@@ -44,7 +84,22 @@
 		<tbody>
 			<tr>
 				<td>
-					yeet
+					<div id="form_from_table">
+						<form>
+							<fieldset>
+								<legend><span class="number">1</span> Security Info</legend>
+								<input type="text" name="building_name" placeholder="Building *">
+								<input type="number" name="security_id" placeholder="Security ID *">
+								<input type="text" name="security_name" placeholder="Security Name *">
+								<input type="text" name="security_shift" placeholder="Shift *">
+								<input type="number" name="security_salary" placeholder="Salary *">
+								<input type="text" name="security_address" placeholder="Address *">
+								
+							</fieldset>
+							
+							<input type="submit" value="Assign" />
+						</form>
+					</div>
 				</td>
 			</tr>
 		</tbody>
