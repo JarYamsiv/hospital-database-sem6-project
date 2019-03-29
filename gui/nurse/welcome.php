@@ -29,14 +29,14 @@
 			<tr>
 				<td>
 				<div id="form_from_table">
-						<form>
+						<form action="view.php" method="post">
 							<fieldset>
 								<legend><span class="number">1</span> Ward Info</legend>
 								<input type="number" name="ward_id" placeholder="Ward ID *">
 								
 							</fieldset>
 							
-							<input type="submit" value="View" />
+							<input type="submit" name="view" value="View" />
 						</form>
 					</div>
 				</td>
