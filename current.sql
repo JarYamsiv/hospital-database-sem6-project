@@ -410,7 +410,7 @@ CREATE TABLE `Patient` (
 
 LOCK TABLES `Patient` WRITE;
 /*!40000 ALTER TABLE `Patient` DISABLE KEYS */;
-INSERT INTO `Patient` VALUES (1,'Ringer',24,NULL,'223 E. Concord','First time visitor here'),(2,'Arjun',21,'2018-12-05','12529 State Road 535','Vistied for headache'),(3,'Gokul Shaji',22,'2019-01-01','Alappuzha','Previously visited for severe back pain, bedridden multiple times'),(4,'Bhagya',26,NULL,'2855 South Orange Ave','First time visitor here'),(5,'Vivek',21,NULL,'7822 W. Sand Lake Rd','First time visitor here'),(456,'',45,'0000-00-00','Nearby','First time here');
+INSERT INTO `Patient` VALUES (1,'Ringer',24,NULL,'223 E. Concord','First time visitor here'),(2,'Arjun',21,'2018-12-05','12529 State Road 535','Vistied for headache'),(3,'Gokul Shaji',22,'2019-01-01','Alappuzha','Previously visited for severe back pain, bedridden multiple times'),(4,'Bhagya',26,NULL,'2855 South Orange Ave','First time visitor here'),(5,'Vivek',21,NULL,'7822 W. Sand Lake Rd','First time visitor here'),(6,'Lolita',15,'0000-00-00','room 113,IITPKD transit','');
 /*!40000 ALTER TABLE `Patient` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -776,7 +776,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('Admin','admin','admin_pass',NULL),('patrick','patrick','doctor_pas','doctor'),('vismay','vismay','doctor_pas','doctor'),('roshin','roshin','nurse_pass','nurse'),('harsha','harsha','patient_pa','patient');
+INSERT INTO `users` VALUES ('Admin','admin','admin_pass',NULL),('patrick','patrick','doctor_pas','doctor'),('vismay','vismay','doctor_pas','doctor'),('roshin','roshin','nurse_pass','nurse'),('harsha','harsha','patient_pa','patient'),(' Lolita','lol','lol','patient');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -846,4 +846,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-29 17:47:19
+-- Dump completed on 2019-03-29 18:48:52
