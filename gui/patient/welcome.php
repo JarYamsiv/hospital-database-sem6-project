@@ -34,6 +34,7 @@
 							<fieldset>
 								<legend><span class="number">1</span> Your Info</legend>
 								
+								<label for="job">User Name:</label>
 								<input type="text" name="pat_name" value="<?php echo($username) ?>" readonly>  
 								<label for="job">Select Doctor:</label>
 

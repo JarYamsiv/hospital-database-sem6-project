@@ -58,7 +58,7 @@
 							<fieldset>
 								<legend><span class="number">1</span> Nurse Info</legend>
 								<input type="number" name="ward_id" placeholder="Ward ID *">
-								<input type="number" name="nurse_id" placeholder="Ward ID *">
+								<input type="number" name="nurse_id" placeholder="Nurse ID *">
 								<input type="text" name="nurse_name" placeholder="Nurse Name *">
 								<input type="text" name="nurse_specialization" placeholder="Specialization *">
 								<input type="number" name="nurse_salary" placeholder="Salary *">

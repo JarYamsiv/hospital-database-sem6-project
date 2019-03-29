@@ -119,7 +119,7 @@ CREATE TABLE `Drug` (
 
 LOCK TABLES `Drug` WRITE;
 /*!40000 ALTER TABLE `Drug` DISABLE KEYS */;
-INSERT INTO `Drug` VALUES (1,'Paracetamol',5,'0000-00-00','0000-00-00',500),(2,'Aspirin',10,'0000-00-00','0000-00-00',50),(3,'Adderall',18,'0000-00-00','0000-00-00',50),(4,'Zantac',25,'0000-00-00','0000-00-00',100),(5,'Gabitril',22,'0000-00-00','0000-00-00',50),(6,'Belviq',23,'0000-00-00','0000-00-00',30),(7,'Bellimumab',40,'0000-00-00','0000-00-00',20),(8,'Zytiga',52,'0000-00-00','0000-00-00',40),(9,'Glybera',100000,'0000-00-00','0000-00-00',10);
+INSERT INTO `Drug` VALUES (1,'Paracetamol',5,'0000-00-00','0000-00-00',483),(2,'Aspirin',10,'0000-00-00','0000-00-00',488),(3,'Adderall',18,'0000-00-00','0000-00-00',488),(4,'Zantac',25,'0000-00-00','0000-00-00',488),(5,'Gabitril',22,'0000-00-00','0000-00-00',488),(6,'Belviq',23,'0000-00-00','0000-00-00',488),(7,'Bellimumab',40,'0000-00-00','0000-00-00',488),(8,'Zytiga',52,'0000-00-00','0000-00-00',488),(9,'Glybera',100000,'0000-00-00','0000-00-00',488),(10,'Asthalin',100,'2019-03-29','2020-03-29',488);
 /*!40000 ALTER TABLE `Drug` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -342,6 +342,8 @@ DROP TABLE IF EXISTS `Pat_attends_doc`;
 CREATE TABLE `Pat_attends_doc` (
   `Doctor_ID` int(11) NOT NULL,
   `Patient_ID` int(11) NOT NULL,
+  `a_date` date DEFAULT NULL,
+  `description` varchar(100) DEFAULT NULL,
   KEY `Doctor_ID` (`Doctor_ID`),
   KEY `Patient_ID` (`Patient_ID`),
   CONSTRAINT `Pat_attends_doc_ibfk_1` FOREIGN KEY (`Doctor_ID`) REFERENCES `Doctor` (`ID`),
@@ -355,7 +357,7 @@ CREATE TABLE `Pat_attends_doc` (
 
 LOCK TABLES `Pat_attends_doc` WRITE;
 /*!40000 ALTER TABLE `Pat_attends_doc` DISABLE KEYS */;
-INSERT INTO `Pat_attends_doc` VALUES (98001,1),(98001,2),(98001,4),(100001,3),(198003,5);
+INSERT INTO `Pat_attends_doc` VALUES (98001,6,'2019-03-31','headache');
 /*!40000 ALTER TABLE `Pat_attends_doc` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -763,7 +765,7 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `name` varchar(20) DEFAULT NULL,
+  `name` varchar(25) DEFAULT NULL,
   `username` varchar(10) DEFAULT NULL,
   `password` varchar(20) DEFAULT NULL,
   `profession` varchar(50) DEFAULT NULL
@@ -776,7 +778,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('Admin','admin','admin_pass',NULL),('patrick','patrick','doctor_pas','doctor'),('vismay','vismay','doctor_pas','doctor'),('roshin','roshin','nurse_pass','nurse'),('harsha','harsha','patient_pa','patient'),(' Lolita','lol','lol','patient');
+INSERT INTO `users` VALUES ('Admin','admin','admin_pass',NULL),('patrick','patrick','doctor_pas','doctor'),('vismay','vismay','doctor_pas','doctor'),('roshin','roshin','nurse_pass','nurse'),('harsha','harsha','patient_pa','patient'),('Lolita','lol','lol','patient'),('Michael','mike','mike_pass','Doctor'),('Daniel','dany','dany_pass','Doctor'),('Lauren','lau','lau_pass','Doctor'),('Ryan','rye','rye_pass','Doctor'),('Brayn','brayn','b_pass','Doctor');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -846,4 +848,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-29 18:48:52
+-- Dump completed on 2019-03-30  0:34:29
