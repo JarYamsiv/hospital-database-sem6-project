@@ -50,6 +50,24 @@
 		</tbody>
 
 
+
+
+		<thead>
+			<tr>
+				<th>
+					Delete Drug
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					yeet
+				</td>
+			</tr>
+		</tbody>
+
+
 		
 
 	</table>

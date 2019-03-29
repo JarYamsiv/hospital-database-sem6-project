@@ -765,7 +765,7 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `name` varchar(20) DEFAULT NULL,
   `username` varchar(10) DEFAULT NULL,
-  `password` varchar(10) DEFAULT NULL,
+  `password` varchar(20) DEFAULT NULL,
   `profession` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -846,4 +846,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-29 15:21:13
+-- Dump completed on 2019-03-29 17:47:19
