@@ -51,7 +51,7 @@
 	} 		
 	else 
 	{
-    	$sql = "INSERT INTO users values( \" ".$s_pat_name."\",\"".$s_pat_uname."\",\"".$s_pat_pass."\", \"patient\");  ";
+    	$sql = "INSERT INTO users values( \"".$s_pat_name."\",\"".$s_pat_uname."\",\"".$s_pat_pass."\", \"patient\");  ";
     	// echo $sql;
     	if(mysqli_query($conn,$sql)>0)
     	{

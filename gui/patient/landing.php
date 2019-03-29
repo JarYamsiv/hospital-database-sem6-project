@@ -41,7 +41,7 @@
 
 	if (mysqli_num_rows($result) > 0) 
 	{
-		header("location: welcome.php");
+		header("location: welcome.php?username=".$pat_name);
 	} 		
 	else 
 	{
