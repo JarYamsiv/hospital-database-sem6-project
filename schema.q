@@ -91,82 +91,82 @@ PRIMARY KEY(ID));
 CREATE TABLE Pat_attends_doc(
 Doctor_ID int NOT NULL,
 Patient_ID int NOT NULL,
-FOREIGN KEY Doctor_ID REFERENCES Doctor(ID),
-FOREIGN KEY Patient_ID REFERENCES Patient(ID));
+FOREIGN KEY (Doctor_ID) REFERENCES Doctor(ID),
+FOREIGN KEY (Patient_ID) REFERENCES Patient(ID));
 
 CREATE TABLE Nurse_governs_ward(
 Nurse_ID int NOT NULL,
 Ward_ID int NOT NULL,
-FOREIGN KEY Nurse_ID REFERENCES Nurse(ID),
-FOREIGN KEY Ward_ID REFERENCES Ward(ID));
+FOREIGN KEY (Nurse_ID) REFERENCES Nurse(ID),
+FOREIGN KEY (Ward_ID) REFERENCES Ward(ID));
 
 CREATE TABLE Doc_present_room(
 Doctor_ID int NOT NULL,
 Room_ID int NOT NULL,
-FOREIGN KEY Doctor_ID REFERENCES Doctor(ID),
-FOREIGN KEY Room_ID REFERENCES Rooms(ID));
+FOREIGN KEY (Doctor_ID) REFERENCES Doctor(ID),
+FOREIGN KEY (Room_ID) REFERENCES Rooms(ID));
 
 CREATE TABLE Pat_refer_lab(
 Patient_ID int NOT NULL,
 Lab_ID int NOT NULL,
-FOREIGN KEY Patient_ID REFERENCES Patient(ID),
-FOREIGN KEY Lab_ID REFERENCES Labs(ID));
+FOREIGN KEY (Patient_ID) REFERENCES Patient(ID),
+FOREIGN KEY (Lab_ID) REFERENCES Labs(ID));
 
 CREATE TABLE Pat_admit_ward(
 Patient_ID int NOT NULL,
 Ward_ID int NOT NULL,
-FOREIGN KEY Patient_ID REFERENCES Patient(ID),
-FOREIGN KEY Ward_ID REFERENCES Ward(ID));
+FOREIGN KEY (Patient_ID) REFERENCES Patient(ID),
+FOREIGN KEY (Ward_ID) REFERENCES Ward(ID));
 
 CREATE TABLE Ward_at_room(
 Ward_ID int NOT NULL,
 Room_ID int NOT NULL,
-FOREIGN KEY Ward_ID REFERENCES Ward(ID),
-FOREIGN KEY Room_ID REFERENCES Rooms(ID));
+FOREIGN KEY (Ward_ID) REFERENCES Ward(ID),
+FOREIGN KEY (Room_ID) REFERENCES Rooms(ID));
 
 CREATE TABLE Lab_at_room(
 Lab_ID int NOT NULL,
 Room_ID int NOT NULL,
-FOREIGN KEY Lab_ID REFERENCES Labs(ID),
-FOREIGN KEY Room_ID REFERENCES Rooms(ID));
+FOREIGN KEY (Lab_ID) REFERENCES Labs(ID),
+FOREIGN KEY (Room_ID) REFERENCES Rooms(ID));
 
 CREATE TABLE Pharmacy_at_room(
 Pharmacy_ID int NOT NULL,
 Room_ID int NOT NULL,
-FOREIGN KEY Pharmacy_ID REFERENCES Pharmacy(ID),
-FOREIGN KEY Room_ID REFERENCES Rooms(ID));
+FOREIGN KEY (Pharmacy_ID) REFERENCES Pharmacy(ID),
+FOREIGN KEY (Room_ID) REFERENCES Rooms(ID));
 
 CREATE TABLE Room_at_building(
 Building_ID int NOT NULL,
 Room_ID int NOT NULL,
-FOREIGN KEY Building_ID REFERENCES Building(ID),
-FOREIGN KEY Room_ID REFERENCES Rooms(ID));
+FOREIGN KEY (Building_ID) REFERENCES Building(ID),
+FOREIGN KEY (Room_ID) REFERENCES Rooms(ID));
 
 CREATE TABLE Patient_bill_drug(
 Patient_ID int NOT NULL,
 Drug_ID int NOT NULL,
 Doctor_ID int NOT NULL,
 Cost int NOT NULL,
-FOREIGN KEY Patient_ID REFERENCES Patient(ID),
-FOREIGN KEY Drug_ID REFERENCES Drug(ID));
+FOREIGN KEY (Patient_ID) REFERENCES Patient(ID),
+FOREIGN KEY (Drug_ID) REFERENCES Drug(ID));
 
 CREATE TABLE Drug_in_pharmacy(
 Drug_ID int NOT NULL,
 Pharmacy_ID int NOT NULL,
-FOREIGN KEY Drug_ID REFERENCES Drug(ID),
-FOREIGN KEY Pharmacy_ID REFERENCES Pharmacy(ID));
+FOREIGN KEY (Drug_ID) REFERENCES Drug(ID),
+FOREIGN KEY (Pharmacy_ID) REFERENCES Pharmacy(ID));
 
 CREATE TABLE Security_assign_building(
 Security_ID int NOT NULL,
 Building_ID int NOT NULL,
-FOREIGN KEY Security_ID REFERENCES Security(ID),
-FOREIGN KEY Building_ID REFERENCES Building(ID));
+FOREIGN KEY (Security_ID) REFERENCES Security(ID),
+FOREIGN KEY (Building_ID) REFERENCES Building(ID));
 
 CREATE TABLE Pharmacist_at_pharmacy(
 Pharmacist_ID int NOT NULL,
 Pharmacy_ID int NOT NULL,
-FOREIGN KEY Pharmacist_ID REFERENCES Pharmacist(ID),
-FOREIGN KEY Pharmacy_ID REFERENCES Pharmacy(ID));
+FOREIGN KEY (Pharmacist_ID) REFERENCES Pharmacist(ID),
+FOREIGN KEY (Pharmacy_ID) REFERENCES Pharmacy(ID));
 
 
 
