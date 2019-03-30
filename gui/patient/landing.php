@@ -41,7 +41,15 @@
 
 	if (mysqli_num_rows($result) > 0) 
 	{
-		header("location: welcome.php?username=".$pat_name);
+		$prof = mysqli_fetch_assoc($result)['profession'];
+		if(strcmp($prof, "patient")==0 || strcmp($prof, "Admin")==0)
+		{
+			header("location: welcome.php");
+		}
+		else
+		{
+			echo "Invalid credentials";
+		}
 	} 		
 	else 
 	{

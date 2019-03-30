@@ -64,63 +64,57 @@ $username = $_GET['docname'];
 					?>
 
 					<?php
-						if(mysqli_num_rows($result)>0)
-						{
-					 ?>
-					<center>
-					<table>
-						<thead>
-							<tr>
-								<th>pat Id</th>
-								<th>appointment date</th>
-								<th>description</th>
-							</tr>						
-						</thead>
-						<tbody>
-							<?php
-										while ( $row = mysqli_fetch_assoc($result)) {
-											$patid = $row['Patient_ID'];
-											$sql = "SELECT Name from Patient where ID=".$patid.";";
-											$result = mysqli_query($conn, $sql);
-											$patname = (mysqli_fetch_assoc($result))['Name'];
+					if(mysqli_num_rows($result)>0)
+					{
+						?>
+						<center>
+							<table>
+								<thead>
+									<tr>
+										<th>Patient Name</th>
+										<th>appointment date</th>
+										<th>description</th>
+									</tr>						
+								</thead>
+								<tbody>
+									<?php
+									while ( $row = mysqli_fetch_assoc($result)) {
+										$patid = $row['Patient_ID'];
+										$sql = "SELECT Name from Patient where ID=".$patid.";";
+										$result = mysqli_query($conn, $sql);
+										$patname = (mysqli_fetch_assoc($result))['Name'];
 
-											echo "<tr>";
-												echo "<td>".$patname."</td>";
-												echo "<td>".$row['a_date']."</td>";
-												echo "<td>".$row['description']."</td>";
-											echo "</tr>";
-										}  
-							?>
-						</tbody>
-						
-					</table>
-					</center>
-					<?php
-						}
-						else{
-							echo "<center>no appointments</center>";
-						}
+										echo "<tr>";
+										echo "<td>".$patname."</td>";
+										echo "<td>".$row['a_date']."</td>";
+										echo "<td>".$row['description']."</td>";
+										echo "</tr>";
+									}  
+									?>
+								</tbody>
+
+							</table>
+						</center>
+						<?php
+					}
+					else{
+						echo "<center>no appointments</center>";
+					}
 					?>
 
+					<br>
+					<br>
+					<form action="clear_ap.php?uname=<?php echo $username ?>" method="post">
+						<input type="text" name="doc_uname" value="<?php echo $username ?>" readonly>
+						<input  type="submit" name="clear" value="clear">
+					</form>
+
 				</td>
 			</tr>
 		</tbody>
 
 
-		<thead>
-			<tr>
-				<th>
-					View Patients
-				</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>
-					yeet
-				</td>
-			</tr>
-		</tbody>
+		
 
 
 		<thead>
@@ -133,7 +127,36 @@ $username = $_GET['docname'];
 		<tbody>
 			<tr>
 				<td>
-					yeet
+					<center>
+						<table>
+							<thead>
+								<tr>
+									<th>Nurse</th>
+									<th>Ward</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<?php
+								$sql = "SELECT * from Nurse_governs_ward;";
+								$result = mysqli_query($conn,$sql);
+
+								while ( $row = mysqli_fetch_assoc($result)) {
+									$nurseid = $row['Nurse_ID'];
+									$sql = "SELECT Name from Nurse where ID=".$nurseid.";";
+									$result1 = mysqli_query($conn, $sql);
+									$nursename = (mysqli_fetch_assoc($result1))['Name'];
+
+									echo "<tr>";
+									echo "<td>".$nursename."</td>";
+									echo "<td>".$row['Ward_ID']."</td>";
+									echo "</tr>";
+								} 
+								?>
+							</tbody>
+
+						</table>
+					</center>
 				</td>
 			</tr>
 		</tbody>

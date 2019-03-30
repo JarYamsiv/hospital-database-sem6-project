@@ -248,7 +248,7 @@ CREATE TABLE `Nurse` (
 
 LOCK TABLES `Nurse` WRITE;
 /*!40000 ALTER TABLE `Nurse` DISABLE KEYS */;
-INSERT INTO `Nurse` VALUES (1,'Rini','Cardiac unit',25000,'83 E. Tallwood Road'),(2,'Arthana','ICU',26000,'8142 East Sage Circle'),(3,'Nimya','Emergancy',29000,'38 Parker Lane'),(4,'Bridget','General',22000,'990 East Lakeshore'),(5,'Indiana','General',22000,'382 Arrowhead Ave'),(6,'Bringa','General',22000,'19 Fremont Drive'),(7,'Ankita','Emergancy',29000,'9295 Walt Whitman Street'),(8,'Dany','Cardiac unit',25000,'42 East Myers Drive'),(9,'Ava','ICU',26000,'250 Logan St.Missoula');
+INSERT INTO `Nurse` VALUES (1,'Rini','Cardiac unit',25000,'83 E. Tallwood Road'),(2,'Arthana','ICU',26000,'8142 East Sage Circle'),(3,'Nimya','Emergancy',29000,'38 Parker Lane'),(4,'Bridget','General',22000,'990 East Lakeshore'),(5,'Indiana','General',22000,'382 Arrowhead Ave'),(6,'Bringa','General',22000,'19 Fremont Drive'),(7,'Ankita','Emergancy',29000,'9295 Walt Whitman Street'),(8,'Dany','Cardiac unit',25000,'42 East Myers Drive'),(9,'Ava','ICU',26000,'250 Logan St.Missoula'),(10,'Paru','General',26000,'room 563, Ahalia campus');
 /*!40000 ALTER TABLE `Nurse` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -357,7 +357,7 @@ CREATE TABLE `Pat_attends_doc` (
 
 LOCK TABLES `Pat_attends_doc` WRITE;
 /*!40000 ALTER TABLE `Pat_attends_doc` DISABLE KEYS */;
-INSERT INTO `Pat_attends_doc` VALUES (98001,6,'2019-03-31','headache');
+INSERT INTO `Pat_attends_doc` VALUES (98001,6,'2019-03-31','Headache');
 /*!40000 ALTER TABLE `Pat_attends_doc` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -778,7 +778,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('Admin','admin','admin_pass',NULL),('patrick','patrick','doctor_pas','doctor'),('vismay','vismay','doctor_pas','doctor'),('roshin','roshin','nurse_pass','nurse'),('harsha','harsha','patient_pa','patient'),('Lolita','lol','lol','patient'),('Michael','mike','mike_pass','Doctor'),('Daniel','dany','dany_pass','Doctor'),('Lauren','lau','lau_pass','Doctor'),('Ryan','rye','rye_pass','Doctor'),('Brayn','brayn','b_pass','Doctor');
+INSERT INTO `users` VALUES ('Admin','admin','admin_pass','Admin'),('patrick','patrick','doctor_pas','doctor'),('vismay','vismay','doctor_pas','doctor'),('roshin','roshin','nurse_pass','nurse'),('harsha','harsha','patient_pa','patient'),('Lolita','lol','lol','patient'),('Michael','mike','mike_pass','Doctor'),('Daniel','dany','dany_pass','Doctor'),('Lauren','lau','lau_pass','Doctor'),('Ryan','rye','rye_pass','Doctor'),('Brayn','brayn','b_pass','Doctor'),('Paru','paru','','nurse'),('Balu','balu','balu_pass','pharmacist');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -848,4 +848,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-30  1:17:25
+-- Dump completed on 2019-03-30 11:37:04

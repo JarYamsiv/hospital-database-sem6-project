@@ -29,14 +29,14 @@
 			<tr>
 				<td>
 					<div id="form_from_table">
-						<form>
+						<form action="view_building.php" method="post">
 							<fieldset>
 								<legend><span class="number">1</span> Building Info</legend>
 								<input type="text" name="detail_building_name" placeholder="Building Name *">
 								
 							</fieldset>
 							
-							<input type="submit" value="View" />
+							<input type="submit" name="view" value="View" />
 						</form>
 					</div>
 				</td>
@@ -54,19 +54,22 @@
 			<tr>
 				<td>
 					<div id="form_from_table">
-						<form>
+						<form action="insert_nurse.php" method="post">
 							<fieldset>
 								<legend><span class="number">1</span> Nurse Info</legend>
-								<input type="number" name="ward_id" placeholder="Ward ID *">
-								<input type="number" name="nurse_id" placeholder="Nurse ID *">
+								<label> Credentials :</label>
 								<input type="text" name="nurse_name" placeholder="Nurse Name *">
+								<input type="text" name="nurse_uname" placeholder="Nurse User Name *">
+								<input type="password" name="nurse_password" placeholder="Nurse password *">
+								<br>
+								<label> Additional Info :</label>
 								<input type="text" name="nurse_specialization" placeholder="Specialization *">
 								<input type="number" name="nurse_salary" placeholder="Salary *">
 								<input type="text" name="nurse_address" placeholder="Address *">
 								
 							</fieldset>
 							
-							<input type="submit" value="Assign" />
+							<input type="submit" name="add_nurse" value="Assign" />
 						</form>
 					</div>
 				</td>
@@ -88,7 +91,7 @@
 						<form>
 							<fieldset>
 								<legend><span class="number">1</span> Security Info</legend>
-								<input type="text" name="building_name" placeholder="Building *">
+
 								<input type="number" name="security_id" placeholder="Security ID *">
 								<input type="text" name="security_name" placeholder="Security Name *">
 								<input type="text" name="security_shift" placeholder="Shift *">
@@ -129,5 +132,5 @@
 <br>
 
 <?php
-mysql_close($conn);
+mysqli_close($conn);
 ?>
